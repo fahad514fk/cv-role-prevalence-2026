@@ -1,0 +1,8 @@
+# CV text is never published: the script downloads it from Hugging Face and rebuilds the sample.
+data_raw/
+data/
+# Training scratch and local logs (logs contain local file paths)
+results/bert_tmp/
+results/*log*.txt
+__pycache__/
+*.pyc

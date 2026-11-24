@@ -1,0 +1,49 @@
+{
+  "source_rows": 210250,
+  "five_role_rows": 78825,
+  "five_role_rows_by_role": {
+    "Data Analyst": 2271,
+    "Java Developer": 11463,
+    "Python Developer": 7588,
+    "Software Tester": 30845,
+    "Website Developer/Designer": 26658
+  },
+  "removed_too_short": 25203,
+  "removed_exact_duplicates_full_pool": 0,
+  "screened_pool": 9595,
+  "screened_pool_by_role": {
+    "Data Analyst": 1595,
+    "Java Developer": 2000,
+    "Python Developer": 2000,
+    "Software Tester": 2000,
+    "Website Developer/Designer": 2000
+  },
+  "removed_near_duplicates": 1,
+  "removed_near_duplicates_by_role": {
+    "Java Developer": 1
+  },
+  "near_dup_threshold_sensitivity": {
+    "cos>=0.8": 3,
+    "cos>=0.9": 1,
+    "cos>=0.95": 0
+  },
+  "final_sample": 3000,
+  "final_per_role": 600,
+  "website_role_composition": {
+    "JavaScript": 545,
+    "Design": 34,
+    "PHP": 21
+  },
+  "software_tester_composition": {
+    "QA": 471,
+    "QA Automation": 129
+  },
+  "median_tokens_by_role": {
+    "Data Analyst": 97.0,
+    "Java Developer": 88.0,
+    "Python Developer": 90.5,
+    "Software Tester": 96.0,
+    "Website Developer/Designer": 87.5
+  },
+  "synthetic_resumes": 0
+}

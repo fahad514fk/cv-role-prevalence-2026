@@ -1,0 +1,503 @@
+{
+  "study": "2026 follow-up to the MSc dissertation; new data (Djinni), not the dissertation's data",
+  "data": {
+    "source_rows": 210250,
+    "five_role_rows": 78825,
+    "five_role_rows_by_role": {
+      "Data Analyst": 2271,
+      "Java Developer": 11463,
+      "Python Developer": 7588,
+      "Software Tester": 30845,
+      "Website Developer/Designer": 26658
+    },
+    "removed_too_short": 25203,
+    "removed_exact_duplicates_full_pool": 0,
+    "screened_pool": 9595,
+    "screened_pool_by_role": {
+      "Data Analyst": 1595,
+      "Java Developer": 2000,
+      "Python Developer": 2000,
+      "Software Tester": 2000,
+      "Website Developer/Designer": 2000
+    },
+    "removed_near_duplicates": 1,
+    "removed_near_duplicates_by_role": {
+      "Java Developer": 1
+    },
+    "near_dup_threshold_sensitivity": {
+      "cos>=0.8": 3,
+      "cos>=0.9": 1,
+      "cos>=0.95": 0
+    },
+    "final_sample": 3000,
+    "final_per_role": 600,
+    "website_role_composition": {
+      "JavaScript": 545,
+      "Design": 34,
+      "PHP": 21
+    },
+    "software_tester_composition": {
+      "QA": 471,
+      "QA Automation": 129
+    },
+    "median_tokens_by_role": {
+      "Data Analyst": 97.0,
+      "Java Developer": 88.0,
+      "Python Developer": 90.5,
+      "Software Tester": 96.0,
+      "Website Developer/Designer": 87.5
+    },
+    "synthetic_resumes": 0
+  },
+  "split_per_role": {
+    "train": 200,
+    "val": 100,
+    "test": 300
+  },
+  "seed": 42,
+  "models": {
+    "Naive Bayes": {
+      "test": {
+        "accuracy": 0.9247,
+        "accuracy_95ci": [
+          0.9107,
+          0.9387
+        ],
+        "macro_f1": 0.9243,
+        "macro_f1_95ci": [
+          0.9103,
+          0.9383
+        ],
+        "per_role_f1": {
+          "Data Analyst": 0.9377,
+          "Java Developer": 0.9048,
+          "Python Developer": 0.8927,
+          "Software Tester": 0.9521,
+          "Website Developer/Designer": 0.9342
+        },
+        "confusion_matrix_rows_true_cols_pred": [
+          [
+            286,
+            2,
+            6,
+            6,
+            0
+          ],
+          [
+            2,
+            271,
+            10,
+            7,
+            10
+          ],
+          [
+            15,
+            13,
+            258,
+            3,
+            11
+          ],
+          [
+            5,
+            3,
+            1,
+            288,
+            3
+          ],
+          [
+            2,
+            10,
+            3,
+            1,
+            284
+          ]
+        ],
+        "n": 1500
+      }
+    },
+    "SVM": {
+      "test": {
+        "accuracy": 0.9053,
+        "accuracy_95ci": [
+          0.8907,
+          0.9213
+        ],
+        "macro_f1": 0.9065,
+        "macro_f1_95ci": [
+          0.8921,
+          0.9218
+        ],
+        "per_role_f1": {
+          "Data Analyst": 0.9316,
+          "Java Developer": 0.8928,
+          "Python Developer": 0.844,
+          "Software Tester": 0.9347,
+          "Website Developer/Designer": 0.9295
+        },
+        "confusion_matrix_rows_true_cols_pred": [
+          [
+            279,
+            2,
+            15,
+            4,
+            0
+          ],
+          [
+            1,
+            254,
+            32,
+            4,
+            9
+          ],
+          [
+            14,
+            1,
+            276,
+            1,
+            8
+          ],
+          [
+            4,
+            7,
+            15,
+            272,
+            2
+          ],
+          [
+            1,
+            5,
+            16,
+            1,
+            277
+          ]
+        ],
+        "n": 1500
+      }
+    },
+    "DistilBERT": {
+      "test": {
+        "accuracy": 0.9153,
+        "accuracy_95ci": [
+          0.9007,
+          0.9287
+        ],
+        "macro_f1": 0.9156,
+        "macro_f1_95ci": [
+          0.901,
+          0.9291
+        ],
+        "per_role_f1": {
+          "Data Analyst": 0.9338,
+          "Java Developer": 0.893,
+          "Python Developer": 0.88,
+          "Software Tester": 0.9451,
+          "Website Developer/Designer": 0.9262
+        },
+        "confusion_matrix_rows_true_cols_pred": [
+          [
+            275,
+            2,
+            19,
+            4,
+            0
+          ],
+          [
+            1,
+            263,
+            17,
+            7,
+            12
+          ],
+          [
+            9,
+            8,
+            275,
+            1,
+            7
+          ],
+          [
+            4,
+            8,
+            3,
+            284,
+            1
+          ],
+          [
+            0,
+            8,
+            11,
+            5,
+            276
+          ]
+        ],
+        "n": 1500
+      },
+      "training_minutes_cpu": 37.5
+    }
+  },
+  "tfidf_split_seeds_42_to_46": {
+    "Naive Bayes": {
+      "accuracy_mean": 0.9133,
+      "accuracy_sd": 0.0098,
+      "macro_f1_mean": 0.9126,
+      "macro_f1_sd": 0.0101
+    },
+    "SVM": {
+      "accuracy_mean": 0.9092,
+      "accuracy_sd": 0.0079,
+      "macro_f1_mean": 0.9099,
+      "macro_f1_sd": 0.0075
+    }
+  },
+  "tfidf_role_words_masked": {
+    "masked_words": [
+      "python",
+      "java",
+      "javascript",
+      "analyst",
+      "analytics",
+      "qa",
+      "tester",
+      "testing",
+      "test",
+      "web",
+      "website",
+      "frontend",
+      "front",
+      "designer",
+      "design"
+    ],
+    "Naive Bayes": {
+      "accuracy": 0.8967,
+      "macro_f1": 0.8957
+    },
+    "SVM": {
+      "accuracy": 0.8807,
+      "macro_f1": 0.8831
+    }
+  },
+  "prevalence": {
+    "design": {
+      "test_pool_per_role": 300,
+      "batch_sizes": [
+        50,
+        200
+      ],
+      "batches_per_size": 500,
+      "true_mix": "Dirichlet(1,1,1,1,1), i.e. uniform over mixes",
+      "training_mix": {
+        "Data Analyst": 0.2,
+        "Java Developer": 0.2,
+        "Python Developer": 0.2,
+        "Software Tester": 0.2,
+        "Website Developer/Designer": 0.2
+      },
+      "confusion_rates_from": "validation split (100 per role), never the test pool",
+      "error": "mean absolute error of the 5 estimated shares, averaged over batches",
+      "shift": "total variation distance between batch mix and training mix"
+    },
+    "results_by_model": {
+      "Naive Bayes": {
+        "overall": {
+          "CC": 0.0187,
+          "ACC": 0.0198,
+          "PCC": 0.0658,
+          "PACC": 0.0222,
+          "EM (Saerens 2002)": 0.0494
+        },
+        "overall_sd": {
+          "CC": 0.0103,
+          "ACC": 0.0089,
+          "PCC": 0.0255,
+          "PACC": 0.011,
+          "EM (Saerens 2002)": 0.0202
+        },
+        "by_batch_size": {
+          "50": {
+            "CC": 0.0213,
+            "ACC": 0.0229,
+            "PCC": 0.0667,
+            "PACC": 0.0275,
+            "EM (Saerens 2002)": 0.0517
+          },
+          "200": {
+            "CC": 0.0161,
+            "ACC": 0.0166,
+            "PCC": 0.0649,
+            "PACC": 0.0169,
+            "EM (Saerens 2002)": 0.0472
+          }
+        },
+        "by_shift": {
+          "low (<0.2)": {
+            "n_batches": 113,
+            "CC": 0.016,
+            "ACC": 0.019,
+            "PCC": 0.0351,
+            "PACC": 0.0223,
+            "EM (Saerens 2002)": 0.0554
+          },
+          "mid (0.2-0.4)": {
+            "n_batches": 609,
+            "CC": 0.0181,
+            "ACC": 0.0197,
+            "PCC": 0.061,
+            "PACC": 0.0224,
+            "EM (Saerens 2002)": 0.0495
+          },
+          "high (>=0.4)": {
+            "n_batches": 278,
+            "CC": 0.0211,
+            "ACC": 0.0202,
+            "PCC": 0.0889,
+            "PACC": 0.0218,
+            "EM (Saerens 2002)": 0.0468
+          }
+        },
+        "share_of_batches_where_ACC_beats_CC": 0.444
+      },
+      "SVM": {
+        "overall": {
+          "CC": 0.0247,
+          "ACC": 0.0193,
+          "PCC": 0.0261,
+          "PACC": 0.017,
+          "EM (Saerens 2002)": 0.0128
+        },
+        "overall_sd": {
+          "CC": 0.012,
+          "ACC": 0.0095,
+          "PCC": 0.0105,
+          "PACC": 0.0082,
+          "EM (Saerens 2002)": 0.0075
+        },
+        "by_batch_size": {
+          "50": {
+            "CC": 0.0267,
+            "ACC": 0.0237,
+            "PCC": 0.0279,
+            "PACC": 0.0206,
+            "EM (Saerens 2002)": 0.0169
+          },
+          "200": {
+            "CC": 0.0227,
+            "ACC": 0.0148,
+            "PCC": 0.0243,
+            "PACC": 0.0135,
+            "EM (Saerens 2002)": 0.0086
+          }
+        },
+        "by_shift": {
+          "low (<0.2)": {
+            "n_batches": 113,
+            "CC": 0.022,
+            "ACC": 0.0205,
+            "PCC": 0.0168,
+            "PACC": 0.0174,
+            "EM (Saerens 2002)": 0.0145
+          },
+          "mid (0.2-0.4)": {
+            "n_batches": 609,
+            "CC": 0.0243,
+            "ACC": 0.0196,
+            "PCC": 0.0245,
+            "PACC": 0.0173,
+            "EM (Saerens 2002)": 0.013
+          },
+          "high (>=0.4)": {
+            "n_batches": 278,
+            "CC": 0.0268,
+            "ACC": 0.018,
+            "PCC": 0.0332,
+            "PACC": 0.0163,
+            "EM (Saerens 2002)": 0.0115
+          }
+        },
+        "share_of_batches_where_ACC_beats_CC": 0.663
+      },
+      "DistilBERT": {
+        "overall": {
+          "CC": 0.0202,
+          "ACC": 0.0161,
+          "PCC": 0.021,
+          "PACC": 0.0155,
+          "EM (Saerens 2002)": 0.0156
+        },
+        "overall_sd": {
+          "CC": 0.0103,
+          "ACC": 0.0083,
+          "PCC": 0.0095,
+          "PACC": 0.008,
+          "EM (Saerens 2002)": 0.0081
+        },
+        "by_batch_size": {
+          "50": {
+            "CC": 0.0225,
+            "ACC": 0.0209,
+            "PCC": 0.0232,
+            "PACC": 0.0197,
+            "EM (Saerens 2002)": 0.0187
+          },
+          "200": {
+            "CC": 0.018,
+            "ACC": 0.0114,
+            "PCC": 0.0188,
+            "PACC": 0.0113,
+            "EM (Saerens 2002)": 0.0125
+          }
+        },
+        "by_shift": {
+          "low (<0.2)": {
+            "n_batches": 113,
+            "CC": 0.0157,
+            "ACC": 0.0155,
+            "PCC": 0.0155,
+            "PACC": 0.0154,
+            "EM (Saerens 2002)": 0.0147
+          },
+          "mid (0.2-0.4)": {
+            "n_batches": 609,
+            "CC": 0.0195,
+            "ACC": 0.0162,
+            "PCC": 0.0199,
+            "PACC": 0.0155,
+            "EM (Saerens 2002)": 0.0155
+          },
+          "high (>=0.4)": {
+            "n_batches": 278,
+            "CC": 0.0237,
+            "ACC": 0.0162,
+            "PCC": 0.0256,
+            "PACC": 0.0156,
+            "EM (Saerens 2002)": 0.0163
+          }
+        },
+        "share_of_batches_where_ACC_beats_CC": 0.664
+      }
+    }
+  },
+  "prevalence_skewed_training": {
+    "design": "train = 200 CVs of one role + 25 of each other role (shares 0.67 / 0.083); same test batches; averaged over the 5 choices of dominant role",
+    "results_by_model": {
+      "Naive Bayes": {
+        "CC": 0.3194,
+        "ACC": 0.1369,
+        "PCC": 0.2825,
+        "PACC": 0.0944,
+        "EM (Saerens 2002)": 0.3197
+      },
+      "SVM": {
+        "CC": 0.1755,
+        "ACC": 0.0592,
+        "PCC": 0.0542,
+        "PACC": 0.0226,
+        "EM (Saerens 2002)": 0.0354
+      }
+    }
+  },
+  "run": {
+    "quick": false,
+    "distilbert_included": true,
+    "finished": "2026-11-24 18:22"
+  }
+}
