@@ -1,6 +1,6 @@
 # Dataset card: Five-role CV benchmark (2026 follow-up study)
 
-**This is new data for a 2026 follow-up study. It is not the data used in the MSc dissertation** (which trained on the public Kaggle `UpdatedResumeDataSet.csv`).
+**This is new data for a 2026 follow-up study. It is not dissertation data**, and it is unrelated to the public Kaggle `UpdatedResumeDataSet.csv` used by the archived MSc dissertation code.
 
 ## Source (the only source used)
 | Item | Value |
@@ -18,7 +18,7 @@
 
 **Synthetic résumés: none.** No synthetic, scraped or private CVs were added.
 
-**Considered but not used:** ResumeAtlas (`ahmedheakl/resume-atlas`, MIT on Hugging Face). Not used because its CVs are compiled from earlier web-scraped collections whose original terms are unclear, and it appears to include the Kaggle dataset the dissertation used.
+**Considered but not used:** ResumeAtlas (`ahmedheakl/resume-atlas`, MIT on Hugging Face). Not used because its CVs are compiled from earlier web-scraped collections whose original terms are unclear, and it appears to include the Kaggle dataset used by the archived dissertation code.
 
 ## How the five roles were defined
 Each Djinni profile has a **Primary Keyword** chosen by the candidate and a free-text **Position** title. Roles (the five targeted in the dissertation brief):
@@ -44,7 +44,7 @@ The text classified is the `CV` field only (highlights + "more info" text). The 
 | Removed: **near duplicates** (TF-IDF cosine ≥ 0.90 to an earlier kept CV, across all roles) | **1** (Java). Sensitivity: 3 CVs at ≥ 0.80, 0 at ≥ 0.95 |
 | Final sample, drawn at random (seed 42) | **3,000 CVs, 600 per role** |
 
-Text cleaning is the dissertation's `clean_text` (lower-case, letters only, NLTK stop-words removed, WordNet lemmatisation, words of 3+ letters). Median length is 88–97 cleaned tokens per role.
+Text cleaning is the archived dissertation code's `clean_text` (lower-case, letters only, NLTK stop-words removed, WordNet lemmatisation, words of 3+ letters). Median length is 88–97 cleaned tokens per role.
 
 Splits, per role and stratified (seed 42): **train 200 / validation 100 / test 300** (1,000 / 500 / 1,500 in total). Because the whole sample was de-duplicated first, no exact or near duplicate occurs across splits; the script also asserts that no cleaned text appears in two splits.
 

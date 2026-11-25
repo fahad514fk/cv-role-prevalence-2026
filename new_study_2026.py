@@ -2,7 +2,7 @@
 
 This is NOT the dissertation's data. It uses the public Djinni Recruitment Dataset (English candidate CVs,
 MIT licence; Drushchak & Romanyshyn, UNLP 2024) to rebuild a clean five-role benchmark, then:
-  1. trains Naive Bayes, SVM (TF-IDF) and fine-tuned DistilBERT with the dissertation's settings and seed 42 on a
+  1. trains Naive Bayes, SVM (TF-IDF) and fine-tuned DistilBERT with the archived dissertation code's settings, seed 42, on a
      de-duplicated split (no exact or near duplicates anywhere in the sample, so none across splits);
   2. runs a class-prevalence experiment after Keith & O'Connor (EMNLP 2018): held-out batches with varied role mixes,
      comparing classify-and-count (CC), adjusted CC (ACC), probabilistic CC (PCC) and, as extras, probabilistic
@@ -55,8 +55,8 @@ ROLE_WORDS = ["python", "java", "javascript", "analyst", "analytics", "qa", "tes
 WEB_TITLE = re.compile(r"\b(web|front[- ]?end|frontend|html|wordpress|webflow)\b", re.I)
 
 
-# ---------------------------------------------------------------- text cleaning (identical to the dissertation's
-# utils/preprocessing.py clean_text, copied here so this study is self-contained)
+# ---------------------------------------------------------------- text cleaning (identical to the archived
+# dissertation code's utils/preprocessing.py clean_text, copied here so this study is self-contained)
 def _nltk():
     import nltk
     for pkg, path in (("stopwords", "corpora/stopwords"), ("wordnet", "corpora/wordnet")):

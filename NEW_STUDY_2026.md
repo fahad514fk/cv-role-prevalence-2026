@@ -5,7 +5,7 @@ Shah Fahad · independent follow-up study, November 2026
 > **This is a new study with new data.** It is not my MSc dissertation and does not reuse its data or results. All numbers below come from `new_study_2026.py` and `results/new_study_results.json` in this repository.
 
 ## 1. Why this study
-My MSc dissertation (2025) compared Naive Bayes, SVM and DistilBERT for résumé classification on the public Kaggle `UpdatedResumeDataSet.csv`. When I reran it in 2026, I found that only **166 of its 962 résumés are distinct**. With duplicates kept, almost every test résumé has a copy in training and scores look near-perfect. With duplicates removed, SVM reached 61.8% on just 34 unseen résumés, too few to compare models reliably.
+The archived code from my MSc dissertation (2025) compares Naive Bayes, SVM and DistilBERT for résumé classification on the public Kaggle `UpdatedResumeDataSet.csv`. When I reran that code in 2026, I found that only **166 of the 962 résumés in that file are distinct**. With duplicates kept, almost every test résumé has a copy in training and scores look near-perfect. With duplicates removed, SVM reached 61.8% on just 34 unseen résumés, too few to compare models reliably.
 
 This study starts again on a properly sourced, de-duplicated and documented dataset. It answers two questions:
 1. **Document level:** how well do Naive Bayes, SVM and DistilBERT tell five software roles apart on CVs they have never seen?
@@ -24,10 +24,10 @@ The source is the **Djinni Recruitment Dataset**, English candidate CVs: anonymi
 - **Synthetic CVs: none.**
 
 ## 3. Methods
-- **Text cleaning** is unchanged from the dissertation: lower-case, letters only, stop-words removed, lemmatised.
+- **Text cleaning** is unchanged from the archived dissertation code: lower-case, letters only, stop-words removed, lemmatised.
 - **Naive Bayes and SVM:** TF-IDF with 5,000 features, `MultinomialNB`, and `SVC(class_weight="balanced")` with RBF kernel and Platt probabilities.
 - **DistilBERT:** `distilbert-base-uncased` fine-tuned for 3 epochs, batch 8, max length 256, learning rate 5e-5 (the library default), on CPU (37.5 minutes).
-- **No tuning.** All settings are the dissertation's defaults, fixed before seeing any result. Nothing was tuned on the test set.
+- **No tuning.** All settings are those of the archived dissertation code, fixed before seeing any result. Nothing was tuned on the test set.
 - **Prevalence estimators** (each gives the five role shares of a batch):
   - **CC**, classify and count: count the predicted labels.
   - **ACC**, adjusted CC: correct CC using the confusion rates P(predicted | true) measured on the validation split. It solves a constrained least-squares problem on the probability simplex, the multiclass form of Keith & O'Connor's eq. 2.
