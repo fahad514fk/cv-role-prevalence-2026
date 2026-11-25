@@ -4,6 +4,8 @@ Shah Fahad · independent follow-up study, November 2026
 
 > **This is a new study with new data.** It is not my MSc dissertation and does not reuse its data or results. All numbers below come from `new_study_2026.py` and `results/new_study_results.json` in this repository.
 
+**How this was made:** I directed this study and approved its design. An AI coding assistant (Claude) wrote the code and ran it on my laptop. Every number can be reproduced with one command (see below).
+
 ## 1. Why this study
 The archived code from my MSc dissertation (2025) compares Naive Bayes, SVM and DistilBERT for résumé classification on the public Kaggle `UpdatedResumeDataSet.csv`. When I reran that code in 2026, I found that only **166 of the 962 résumés in that file are distinct**. With duplicates kept, almost every test résumé has a copy in training and scores look near-perfect. With duplicates removed, SVM reached 61.8% on just 34 unseen résumés, too few to compare models reliably.
 

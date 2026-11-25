@@ -2,6 +2,8 @@
 
 **Job-role classification and class-prevalence estimation on a de-duplicated, licence-documented CV benchmark.** An independent 2026 follow-up to my MSc dissertation on résumé classification, using new data. Shah Fahad.
 
+**How this was made:** I directed this study and approved its design. An AI coding assistant (Claude) wrote the code and ran it on my laptop. Every number can be reproduced with one command (see below).
+
 - **Data:** 3,000 anonymised IT CVs, 600 for each of five roles (Python Developer, Java Developer, Data Analyst, Software Tester, Website Developer/Designer), taken from the public [Djinni Recruitment Dataset](https://huggingface.co/datasets/lang-uk/recruitment-dataset-candidate-profiles-english) (MIT licence). Exact and near duplicates were screened out before splitting. See [`DATASET_CARD.md`](DATASET_CARD.md).
 - **Classification:** Naive Bayes 92.5%, SVM 90.5%, DistilBERT 91.5% accuracy on 1,500 held-out CVs. The 95% intervals overlap, so no model is clearly best.
 - **Prevalence estimation** (after Keith & O'Connor, EMNLP 2018, extended to five classes):
